@@ -1,0 +1,16 @@
+<%- include('../partials/header.ejs')%>
+    <div class = "content">
+        <img src='/images/<%= trade.set%>/<%= trade.card.toLowerCase()%>.png' alt='Card image'>
+        <h1>Card name: <%= trade.card%></h1>
+        <p>Set: <%= trade.set%></p>
+        <p>Trader: <%=trade.author%></p>
+        <p>Status: <%= trade.status%></p>
+        <br>
+        <p>Looking for: <%=trade.wCard%> from <%=trade.wSet%></p>
+
+        <form>
+            <button type= "submit" formmethod="GET" formaction="/trades/view/<%=trade.id%>/edit">Edit</button>
+            <button type= "submit" formmethod="POST" formaction="/trades/view/<%=trade.id%>?_method=DELETE">Delete</button>
+        </form>
+    </div>
+<%- include('../partials/footer.ejs')%>

@@ -1,0 +1,40 @@
+<%- include('../partials/header.ejs')%>
+    <div class = "content">
+        <form method= "POST" action = "/trades/view/<%= trade.id%>?_method=PUT">
+        <p>Edit card and set you have</p>
+        <label for="set">Choose a set:</label>
+        <select id="set" name="set">
+            <%for(let i = 0; i < sets.length; i++){%>
+                <option value="<%= sets[i]%>"><%= sets[i]%></option>
+            <%}%>
+        </select>
+        <br>
+        <label for="card">Choose a card:</label>
+        <select id="card" name="card">
+            <%for(let i = 0; i < cards.length; i++){%>
+                <option value="<%= cards[i]%>"><%= cards[i]%></option>
+            <%}%>
+        </select>
+        <br>
+
+
+        <p>Edit what card you want</p>
+        <label for="wSet">Choose a set:</label>
+        <select id="wSet" name="wSet">
+            <%for(let i = 0; i < sets.length; i++){%>
+                <option value="<%= sets[i]%>"><%= sets[i]%></option>
+            <%}%>
+        </select>
+        <br>
+        <label for="wCard">Choose a card:</label>
+        <select id="wCard" name="wCard">
+            <%for(let i = 0; i < cards.length; i++){%>
+                <option value="<%= cards[i]%>"><%= cards[i]%></option>
+            <%}%>
+        </select>
+        <br>
+        <button type="submit">Sumbit</button>
+
+        </form>
+    </div>
+<%- include('../partials/footer.ejs')%>

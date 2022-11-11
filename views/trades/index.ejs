@@ -1,0 +1,12 @@
+<%- include('../partials/header.ejs')%>
+    <div class = "content">
+        <%if(sets.length){%>
+            <p>What set were you looking for?</p>
+            <%for(let i = 0; i < sets.length; i++){%>
+                <a href="/trades/<%= sets[i]%>"><p><%= sets[i]%></p></a>
+            <%}
+        } else { %>
+            <p>There are no sets to display.</p>
+        <%}%>
+    </div>
+<%- include('../partials/footer.ejs')%>

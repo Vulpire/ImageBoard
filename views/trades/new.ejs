@@ -1,0 +1,39 @@
+<%- include('../partials/header.ejs')%>
+    <form action= '/trades' method = 'POST' id="newTrade">
+        <p>What is your name?</p>
+        <input type="text" id="author" name="author" required>
+        <p>What card do you have?</p>
+        <label for="set">Choose a set:</label>
+        <select id="set" name="set">
+            <%for(let i = 0; i < setsArray.length; i++){%>
+                <option value="<%= setsArray[i]%>"><%= setsArray[i]%></option>
+            <%}%>
+        </select>
+        <br>
+        <label for="card">Choose a card:</label>
+        <select id="card" name="card">
+            <%for(let i = 0; i < cardsArray.length; i++){%>
+                <option value="<%= cardsArray[i]%>"><%= cardsArray[i]%></option>
+            <%}%>
+        </select>
+        <br>
+
+
+        <p>What card do you want?</p>
+        <label for="wSet">Choose a set:</label>
+        <select id="wSet" name="wSet">
+            <%for(let i = 0; i < setsArray.length; i++){%>
+                <option value="<%= setsArray[i]%>"><%= setsArray[i]%></option>
+            <%}%>
+        </select>
+        <br>
+        <label for="wCard">Choose a card:</label>
+        <select id="wCard" name="wCard">
+            <%for(let i = 0; i < cardsArray.length; i++){%>
+                <option value="<%= cardsArray[i]%>"><%= cardsArray[i]%></option>
+            <%}%>
+        </select>
+        <br>
+        <button type="submit">Sumbit</button>
+    </form>
+<%- include('../partials/footer.ejs')%>
